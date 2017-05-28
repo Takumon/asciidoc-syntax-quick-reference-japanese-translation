@@ -1,7 +1,7 @@
-# asciidoc-syntax-quick-reference-japanese-translation
+# Asciidoctor文法クリックリファレンスの日本語訳
 
-## ドキュメントのURL
-
+## 日本語訳のURL
+https://takumon.github.io/asciidoc-syntax-quick-reference-japanese-translation/
 
 ## 本ドキュメントは
 2017/5/28時点で最新のlink:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[Asciidoctorクイック文法リファレンス] を日本訳したものです。
