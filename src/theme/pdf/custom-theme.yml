@@ -1,0 +1,276 @@
+#------
+# Font Section
+#------
+font:
+  catalog:
+    # Noto Serif supports Latin, Latin-1 Supplement, Latin Extended-A, Greek, Cyrillic, Vietnamese & an assortment of symbols
+    Noto Serif:
+      normal: notoserif-regular-subset.ttf
+      bold: notoserif-bold-subset.ttf
+      italic: notoserif-italic-subset.ttf
+      bold_italic: notoserif-bold_italic-subset.ttf
+    # M+ 1mn supports ASCII and the circled numbers used for conums
+    M+ 1mn:
+      normal: mplus1mn-regular-ascii-conums.ttf
+      bold: mplus1mn-bold-ascii.ttf
+      italic: mplus1mn-italic-ascii.ttf
+      bold_italic: mplus1mn-bold_italic-ascii.ttf
+    # M+ 1p supports Latin, Latin-1 Supplement, Latin Extended, Greek, Cyrillic, Vietnamese, Japanese & an assortment of symbols
+    # It also provides arrows for ->, <-, => and <= replacements in case these glyphs are missing from font
+    M+ 1p Fallback:
+      normal: mplus1p-regular-fallback.ttf
+      bold: mplus1p-regular-fallback.ttf
+      italic: mplus1p-regular-fallback.ttf
+      bold_italic: mplus1p-regular-fallback.ttf
+  fallbacks:
+    - M+ 1p Fallback
+    
+#------
+# Page Section
+#------
+page:
+  background_color: ffffff
+  layout: portrait
+  margin: [0.7in, 1in, 0.7in, 1in]
+  size: A4
+
+#------
+# Base Section
+#------
+base:
+  align: left
+  font_color: 333333
+  font_family: Noto Serif
+  font_size: 10.5
+  line_height_length: 14
+  line_height: $base_line_height_length / $base_font_size
+  font_size_large: round($base_font_size * 1.25)
+  font_size_small: round($base_font_size * 0.85)
+  font_size_min: $base_font_size * 0.75
+  font_style: normal
+  border_color: [87,86,79]
+  border_radius: 2
+  border_width: 0.5
+# FIXME vertical_rhythm is weird; we should think in terms of ems
+#vertical_rhythm: $base_line_height_length * 2 / 3
+# correct line height for Noto Serif metrics (comes with built-in line height)
+vertical_rhythm: $base_line_height_length
+horizontal_rhythm: $base_line_height_length
+# QUESTION should vertical_spacing be block_spacing instead?
+vertical_spacing: $vertical_rhythm
+#------
+
+#------
+# Link Section
+#------
+link:
+  font_color: [231,52,64]
+
+#------
+# literal is currently used for inline monospaced in prose and table cells
+#------
+literal:
+  font_color: [163,11,26]
+  font_family: M+ 1mn
+
+#------
+# Heading Section
+#------
+heading:
+  font_family: $base_font_family             # <-- 本文と同じフォントファミリを使う
+  font_style: bold                           # <-- 太字
+  font_color: [122,30,28]                    # <-- 見出しフォント（強調色）
+  # ... h1 is used for part titles
+  h1_font_size: floor($base_font_size * 2.4) # <-- 本文フォントの2.4倍のサイズ
+  # ... h2 is used for chapter titles
+  h2_font_size: floor($base_font_size * 2.0) # <-- 本文フォントの2倍のサイズ
+  h3_font_size: round($base_font_size * 1.5) # <-- 本文フォントの1.5倍のサイズ
+  h4_font_size: $base_font_size_large        # <-- 使わない想定
+  h5_font_size: $base_font_size              # <-- 使わない想定
+  h6_font_size: $base_font_size_small        # <-- 使わない想定
+  line_height: 1
+  margin_top: $vertical_rhythm * 0.4
+  margin_bottom: $vertical_rhythm * 0.9
+
+#------
+# Title Page Section
+#------
+title_page:
+  align: left
+  logo:                                      # ロゴ
+    top: 5%                                  # <-- 紙面上部から5%の位置にロゴを置く
+    align: right                             # <-- 右寄せ
+  title:                                     # タイトル
+    top: 45%                                 # <-- 紙面上部から45%の位置にタイトルを置く
+    font_size: $heading_h1_font_size         # <-- 見出しレベル1
+    font_stye: bold                          # <-- 太字
+    font_color: [122,30,28]                  # <-- 見出しフォント（強調色）
+    line_height: 0.9
+  subtitle:                                  # サブタイトル
+    font_size: $heading_h3_font_size　　　 　　# <-- 見出しレベル3相当のフォントサイズ
+    font_style: bold                         # <-- 太字
+    font_color: [122,30,28]                  # <-- 見出しフォント（強調色）
+    line_height: 1
+  authors:                                   # 作者
+    font_color: [51,51,51]                   # <-- 見出しフォント（基調色）
+    margin_top: $base_font_size * 1.25
+    font_size: $base_font_size_large
+  revision:                                  # 版数
+    font_color: [51,51,51]                   # <-- 見出しフォント（基調色）
+    margin_top: $base_font_size * 1.25
+
+block:
+  margin_top: 0
+  margin_bottom: $vertical_rhythm
+caption:
+  align: left
+  font_style: italic
+  # FIXME perhaps set line_height instead of / in addition to margins?
+  margin_inside: $vertical_rhythm / 3
+  #margin_inside: $vertical_rhythm / 4
+  margin_outside: 0
+lead:
+  font_size: $base_font_size_large
+  line_height: 1.4
+abstract:
+  font_color: 5c6266
+  font_size: $lead_font_size
+  line_height: $lead_line_height
+  font_style: italic
+admonition:
+  border_color: $base_border_color
+  border_width: $base_border_width
+  padding: [0, $horizontal_rhythm, 0, $horizontal_rhythm]
+blockquote:
+  font_color: $base_font_color
+  font_size: $base_font_size_large
+  border_color: $base_border_color
+  border_width: 5
+  padding: [$vertical_rhythm / 2, $horizontal_rhythm, $vertical_rhythm / -2, $horizontal_rhythm + $blockquote_border_width / 2]
+  cite_font_size: $base_font_size_small
+  cite_font_color: 999999
+
+#------
+# Code section
+# ... code is used for source blocks (perhaps change to source or listing?)
+#------
+code:
+  font_color: $base_font_color
+  font_family: $literal_font_family
+  font_size: ceil($base_font_size)
+  padding: $code_font_size
+  line_height: 1.25
+  background_color: [237,237,236]     # <-- 「背景色（コードブロック」
+  border_color: $base_border_color    # <-- Base sectionで設定
+  border_radius: $base_border_radius  # <-- Base Sectionで 2ポイントに設定
+conum:
+  font_family: M+ 1mn
+  font_color: $literal_font_color
+  font_size: $base_font_size
+  line_height: 4 / 3
+example:
+  border_color: $base_border_color
+  border_radius: $base_border_radius
+  border_width: 0.75
+  background_color: transparent
+  # FIXME reenable margin bottom once margin collapsing is implemented
+  padding: [$vertical_rhythm, $horizontal_rhythm, 0, $horizontal_rhythm]
+image:
+  align: left
+prose:
+  margin_top: 0
+  margin_bottom: $vertical_rhythm
+sidebar:
+  border_color: $page_background_color
+  border_radius: $base_border_radius
+  border_width: $base_border_width
+  background_color: eeeeee
+  # FIXME reenable margin bottom once margin collapsing is implemented
+  padding: [$vertical_rhythm, $vertical_rhythm * 1.25, 0, $vertical_rhythm * 1.25]
+  title:
+    align: center
+    font_color: $heading_font_color
+    font_family: $heading_font_family
+    font_size: $heading_h4_font_size
+    font_style: $heading_font_style
+thematic_break:
+  border_color: $base_border_color
+  border_style: solid
+  border_width: $base_border_width
+  margin_top: $vertical_rhythm * 0.5
+  margin_bottom: $vertical_rhythm * 1.5
+description_list:
+  term_font_style: italic
+  term_spacing: $vertical_rhythm / 4
+  description_indent: $horizontal_rhythm * 1.25
+outline_list:
+  indent: $horizontal_rhythm * 1.5
+  # NOTE item_spacing applies to list items that do not have complex content
+  item_spacing: $vertical_rhythm / 2
+  #marker_font_color: 404040
+
+#------
+# Table section
+#------
+table:
+  background_color: $page_background_color
+  head_font_color: $base_font_color
+  head_font_style: bold
+  head_background_color: [135,134,126]             # <-- ヘッダー行
+  foot_background_color: [135,134,126]             # <-- フッター行
+  even_row_background_color: [237,237,236]         # 偶数行
+  odd_row_background_color: $page_background_color # 奇数行
+  border_color: [87, 86, 79]
+  border_width: $base_border_width
+  # HACK accounting for line-height
+  cell_padding: [3, 3, 6, 3]
+toc:
+  dot_leader_color: dddddd
+  #dot_leader_content: '. '
+  indent: $horizontal_rhythm
+  line_height: 1.4
+
+
+#------
+# Header Section
+#------
+header:
+  font_size: $base_font_size_small　　　　　　　　　    # <-- 本文フォントより小さく  
+  font_color: $base_font_color
+  border_style: double                              # 二重線
+  border_color: $base_border_color
+  border_width: 0.25
+  height: $base_line_height_length * 2.5
+  vertical_align: bottom
+  padding: [$base_line_height_length / 2, 1, 0, 1]
+  recto_content:                                     # 右見開きページ
+    left: '{document-title}'                         # <-- ドキュメントタイトル
+    right: 'v{revnumber}'                            # <-- ドキュメント版数
+  verso_content:                                     # 左見開きページ
+    left: '{document-title}'                         # <-- ドキュメントタイトル
+    right: 'v{revnumber}'                            # <-- ドキュメント版数
+
+#------
+# Footer Section
+#------
+footer:
+  font_size: $base_font_size_min
+  font_color: $base_font_color
+  # NOTE if background_color is set, background and border will span width of page
+  border_color: $base_border_color
+  border_style: solid
+  border_width: 0.25
+  height: $base_line_height_length * 3.5
+  line_height: 1
+  padding: [$base_line_height_length / 2, 1, 0, 1]
+  vertical_align: top
+  recto_content:
+    left: Public               　　　　　　　　　　　               # <-- フッダー（左）に機密区分表記（Public）
+    center: |                                                  # <-- フッダー（中央）
+      {page-number} +                                          # <-- ... ページ番号
+      Copyright &#169; HogeHoge CO.,LTD. All right reserved.　 # <-- ... コピーライト
+  verso_content:
+    left: Internal Use Only               　　　　　　　　　　　    # <-- フッダー（左）に機密区分表記（Public）
+    center: |                                                  # <-- フッダー（中央）
+      {page-number} +                                          # <-- ページ番号
+      Copyright &#169; HogeHoge CO.,LTD. All right reserved.　 # <-- コピーライト

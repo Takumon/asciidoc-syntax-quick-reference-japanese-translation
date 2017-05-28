@@ -1,0 +1,20 @@
+# asciidoc-syntax-quick-reference-japanese-translation
+
+## ドキュメントのURL
+
+
+## 本ドキュメントは
+2017/5/28時点で最新のlink:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[Asciidoctorクイック文法リファレンス] を日本訳したものです。
+ところどころ意訳したり、補足説明を追加したりしています。
+自分の学習のために、本ドキュメントを作成しましたが、
+少しでも多くの方にこれを読んでもらい、Asciidoctorの概要を把握するときに手助けになれば幸いです。
+
+## Asciidocとは
+Markdownなどのような軽量マークアップ言語の一つです。
+Markdonwよりも高い表現力、高い可読性を持ち合わせたもので、技術文書を書くのに適しています。
+またOffice文章と比べても、差分比較がしやすい、CI環境にのせることができるなどのメリットがあります。
+
+## Asciidoctorとは
+AsciidoctorはAsciidocコンテンツをHTML5やDocBook 5、PDFに変換するためのツール群です。
+Rubyで実装されておりRubyGem.orgでパッケージが公開されています。
+オープンソースでGithubにホストされており、MITライセンスです。

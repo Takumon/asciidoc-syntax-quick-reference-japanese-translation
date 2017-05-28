@@ -1,0 +1,67 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+        classpath 'org.asciidoctor:asciidoctorj-diagram:1.3.1'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11'
+    }
+}
+
+plugins {
+    id 'org.asciidoctor.convert' version '1.5.3'
+    id 'org.kordamp.gradle.livereload' version '0.2.1'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.asciidoctor.convert'
+apply plugin: 'org.asciidoctor.gradle.asciidoctor'
+apply plugin: 'org.kordamp.gradle.livereload'
+
+
+asciidoctorj {
+    version = '1.5.4'
+}
+asciidoctor {
+    def source = project.sourceSets.main.java.srcDirs[0]
+    inputs.dir source
+
+    outputDir = file("build/docs/asciidoc")
+    backends = ['html5','pdf']
+    requires = ['asciidoctor-diagram']
+
+    attributes (
+        'build-gradle': file('build.gradle'),
+        'pdf-fontsdir' : "$rootDir/src/fonts", // フォント格納フォルダ
+        'pdf-stylesdir' : "$rootDir/src/theme/pdf",     // PDFテーマ格納フォルダ
+        'pdf-style' : 'custom-theme.yml',        // PDFテーマファイル名
+    )
+
+    // スタイルシート用画像フォルダをビルド先にコピー
+    doLast {
+        print outputDir
+        copy {
+            from "$rootDir/src/theme/html5/images"
+            into "$outputDir/images"
+        }
+
+        // 公開フォルダにHTML資産を格納
+        copy {
+            from "$outputDir/html5"
+            into "docs"
+        }
+    }
+}
+
+
+
+liveReload {
+    docRoot asciidoctor.outputDir.canonicalPath
+}
+
+
+task wrapper (type: Wrapper) {
+    gradleVersion = '3.5'
+}
