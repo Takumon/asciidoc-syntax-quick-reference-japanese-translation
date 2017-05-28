@@ -4,7 +4,7 @@
 https://takumon.github.io/asciidoc-syntax-quick-reference-japanese-translation/
 
 ## 本ドキュメントは
-2017/5/28時点で最新のlink:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[Asciidoctorクイック文法リファレンス] を日本訳したものです。
+2017/5/28時点で最新のlink:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[Asciidoctor文法クイックリファレンス] を日本訳したものです。
 ところどころ意訳したり、補足説明を追加したりしています。
 自分の学習のために、本ドキュメントを作成しましたが、
 少しでも多くの方にこれを読んでもらい、Asciidoctorの概要を把握するときに手助けになれば幸いです。
