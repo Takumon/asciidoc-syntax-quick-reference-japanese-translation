@@ -1,0 +1,39 @@
+// tag::画像データ埋め込み[]
+= ドキュメントタイトル
+:data-uri:
+// end::画像データ埋め込み[]
+
+
+// tag::基本[]
+image::sunset.jpg[]
+// end::基本[]
+
+
+// tag::alt属性使用[]
+image::sunset.jpg[夕日]
+// end::alt属性使用[]
+
+
+// tag::属性使用[]
+.山の夕日
+[#image-sunset]
+[caption="図 1:", link=http://www.flickr.com/photos/javh/5448336655]
+image::sunset.jpg[夕日, 300, 200]
+// end::属性使用[]
+
+
+// tag::URL指定[]
+image::http://asciidoctor.org/images/octocat.jpg[GitHub mascot]
+// end::URL指定[]
+
+
+// tag::インライン[]
+クリック image:icons/play.png[Play, title="Play"] パーティーを開始する。
+
+クリック image:icons/pause.png[title="Pause"] 休憩する。
+// end::インライン[]
+
+
+// tag::インライン画像(位置指定あり)[]
+image:sunset.jpg[夕日, 150, 150, role="right"] なんて美しい夕日！
+// end::インライン画像(位置指定あり)[]

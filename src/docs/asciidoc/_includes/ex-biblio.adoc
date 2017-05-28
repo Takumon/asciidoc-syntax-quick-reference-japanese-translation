@@ -1,0 +1,10 @@
+// tag::基本[]
+_The Pragmatic Programmer_ <<prag>> should be required reading for
+all developers.
+
+[bibliography]
+- [[[prag]]] Andy Hunt & Dave Thomas. The Pragmatic Programmer:
+  From Journeyman to Master. Addison-Wesley. 1999.
+- [[[seam]]] Dan Allen. Seam in Action. Manning Publications.
+  2008.
+// end::基本[]

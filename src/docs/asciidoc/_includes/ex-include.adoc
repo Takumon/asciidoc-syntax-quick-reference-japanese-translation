@@ -1,0 +1,22 @@
+// tag::基本[]
+= ドキュメントのリファレンス
+開発者向け
+
+includeステートメントを指定することで別ファイルをインクルードできます。 +
+ファイル名の後の[]は、インクルードファイルのタグや行数を指定して、 +
+ファイルの一部だけをインクルードすることができます。
+
+\include::basics.adoc[]
+
+\include::installation.adoc[]
+
+\include::example.adoc[]
+// end::基本[]
+
+
+
+// tag::URI[]
+inclueステートメントにはURIを指定することもできます。
+
+\include::https://raw.githubusercontent.com/asciidoctor/asciidoctor/master/README.adoc[]
+// end::URI[]

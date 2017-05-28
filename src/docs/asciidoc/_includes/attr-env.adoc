@@ -1,0 +1,121 @@
+// tag::table[]
+.環境属性
+[cols="1m,2a,1m"]
+|===
+|属性 |説明 |値の例
+
+|asciidoctor
+|プトセッサーがAsciidoctorの場合に設定する。
+|{asciidoctor}
+
+|asciidoctor-version
+|Asciidoctorのバージョン
+|{asciidoctor-version}
+
+|backend
+|出力ファイルの形式。
+|html5
+
+|basebackend
+|backend属性の値から最後の数値を除いた値を設定する。
+例えばbackendが`docbook5`なら`docbook`を設定する。
+|html
+
+|docdate
+|ドキュメントの最終更新日^[1,2]^
+|2015-01-04
+
+|docdatetime
+|ドキュメントの最終更新日時^[1,2]^
+|2015-01-04 19:26:06 GMT+0000
+
+|docdir
+|ドキュメント格納ディレクトリのフルパス
+|/home/user/docs
+
+|docfile
+|ドキュメントのフルパス
+|/home/user/docs/userguide.adoc
+
+|docname
+|拡張子を除いたドキュメント名
+|userguide
+
+|doctime
+|Last modified time of the source document.^[1,2]^
+|19:26:06 GMT+0000
+
+|doctype
+|ドキュメントタイプ (article、book、manpageのどれか)
+|article
+
+|embedded
+|ドキュメント生成時にコンテンツをドキュメント自体に埋め込む場合に設定する。
+|
+
+|filetype
+|出力ファイルの拡張子
+|html
+
+|htmlsyntax
+|HTMLに出力する時の構文形式(htmlかxhtml)
+|html
+
+|localdate
+|ドキュメント生成日^[2]^
+|2016-02-17
+
+|localdatetime
+|ドキュメント生成日時^[2]^
+|2016-02-17 19:31:05 GMT+0000
+
+|localtime
+|ドキュメント生成時間^[2]^
+|19:31:05 GMT+0000
+
+|outdir
+|出力ディレクトリのフルパス
+|/home/user/docs/dist
+
+|outfile
+|出力ファイルのフルパス。
+|/home/user/docs/dist/userguide.html
+
+|outfilesuffix
+|出力ファイルの拡張子（最初にピリオド含む）。backendによって値が決まる。（``html``なら``.html``、``docbook``なら ``.xml``　など)
+この属性値を定義している場合、
+出力ファイルの拡張子に合わせた値に上書かれることはない。__変更に対して安全。__
+
+|.html
+
+|safe-mode-level
+|数値によってセーフモードを指定する。
+(UNSAFE=0, SAFE=10, SERVER=10, SECURE=20).
+|20
+
+|safe-mode-name
+|文字列によってセーフモードを指定する。
+|SERVER
+
+|safe-mode-unsafe
+|セーフモードをUNSAFEにする場合に指定する。
+|
+
+|safe-mode-safe
+|セーフモードをSAFEにする場合に指定する。
+|
+
+|safe-mode-server
+|セーフモードをSERVERにする場合に指定する。
+|
+
+|safe-mode-secure
+|セーフモードをSECUREにする場合に指定する。
+|
+
+|user-home
+|カレントユーザのホームディレクトリ
+セーフモードがSERVER以上の場合は、カレントディレクトリからの相対パスとみなす。
+|/home/user
+|===
+// end::table[]

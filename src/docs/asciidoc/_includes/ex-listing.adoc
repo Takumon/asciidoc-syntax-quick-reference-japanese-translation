@@ -1,0 +1,29 @@
+// tag::タイトル付きブロック要素（シンタックスハイライトなし）[]
+.Gemfile.lock
+----
+GEM
+  remote: https://rubygems.org/
+  specs:
+    asciidoctor (0.1.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asciidoctor (~> 0.1.4)
+----
+// end::タイトル付きブロック要素（シンタックスハイライトなし）[]
+
+
+// tag::カスタム置換属性[]
+:version: 0.1.4
+
+[source,xml,subs="verbatim,attributes"]
+----
+<dependency>
+  <groupId>org.asciidoctor</groupId>
+  <artifactId>asciidoctor-java-integration</artifactId>
+  <version>{version}</version>
+</dependency>
+----
+// end::カスタム置換属性[]

@@ -1,0 +1,51 @@
+// tag::タイトル付きブロック要素（シンタックスハイライトあり）[]
+[[app-listing]]
+[source,ruby]
+.app.rb
+----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+----
+// end::タイトル付きブロック要素（シンタックスハイライトあり）[]
+
+
+// tag::ソースファイル読み込み[]
+[source,java]
+----
+\include::StringUtils.java[]
+----
+// end::ソースファイル読み込み[]
+
+
+// tag::ソースファイル読み込み(ソースコードフォルダからの相対パス指定)[]
+:sourcedir: src/main/java
+
+[source,java]
+----
+include::{sourcedir}/org/asciidoctor/Asciidoctor.java[]
+----
+// end::ソースファイル読み込み(ソースコードフォルダからの相対パス指定)[]
+
+
+// tag::区切り文字なしのブロック要素[]
+[source,xml]
+<meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+
+この行は通常のコンテンツです。
+// end::区切り文字なしのブロック要素[]
+
+
+// tag::フェンス[]
+```ruby
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+```
+// end::フェンス[]

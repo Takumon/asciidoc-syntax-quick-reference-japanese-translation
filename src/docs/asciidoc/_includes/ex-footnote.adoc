@@ -1,0 +1,8 @@
+
+// tag::基本[]
+声明その１。footnote:[この声明のついての明確化]
+
+大胆な声明その１.footnoteref:[disclaimer, Opinions are my own.]
+
+大胆な声明その２.footnoteref:[disclaimer]
+// end::基本[]

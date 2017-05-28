@@ -1,0 +1,8 @@
+// tag::基本[]
+.AsciiDocの歴史
+****
+AsciiDocは、Stuart Rackhamが2002年11月にリリースした
+AsciiDocは、DocBookやLaTeXのような専門的な文章を作成するためのもので、
+より簡単な文法で専門的は文章が書けるようにデザインされていた。
+****
+// end::基本[]

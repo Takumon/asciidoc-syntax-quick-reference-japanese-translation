@@ -1,0 +1,31 @@
+// tag::基本[]
+= 本ドキュメントのタイトル
+著者名 <doc.writer@asciidoctor.org>
+v1.0, 2014-01-01
+// ドキュメントの属性を下記のように定義します。
+:toc:
+:imagesdir: assets/images
+:homepage: http://asciidoctor.org
+
+本ドキュメントは...
+// end::基本[]
+
+
+// tag::属性の定義と使用方法[]
+:homepage: http://asciidoctor.org
+:docslink: http://asciidoctor.org/docs[Asciidoctor's Docs]
+:summary: Asciidoctor is a mature, plain-text document format for \
+       writing notes, articles, documentation, books, and more. \
+       It's also a text processor & toolchain for translating \
+       documents into various output formats (i.e., backends), \
+       including HTML, DocBook, PDF and ePub.
+:checkedbox: pass:normal[{startsb}&#10004;{endsb}]
+
+Check out {homepage}[Asciidoctor]!
+
+{summary}
+
+Check out {docslink} too!
+
+{checkedbox} That's done!
+// end::属性の定義と使用方法[]

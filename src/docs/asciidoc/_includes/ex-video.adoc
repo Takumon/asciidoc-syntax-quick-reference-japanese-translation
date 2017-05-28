@@ -1,0 +1,18 @@
+// tag::ブロック要素[]
+video::video_file.mp4[]
+// end::ブロック要素[]
+
+
+// tag::属性指定[]
+video::video_file.mp4[width=640, start=140, options=autoplay]
+// end::属性指定[]
+
+
+// tag::動画youtube[]
+video::TabMg56daZ0[youtube]
+// end::動画youtube[]
+
+
+// tag::動画vimeo[]
+video::22439234[vimeo]
+// end::動画vimeo[]

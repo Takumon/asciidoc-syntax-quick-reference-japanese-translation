@@ -1,0 +1,12 @@
+// tag::リテラル行コード[]
+ コードスニペットは行冒頭に１つのスペースを挿入してください。
+// end::リテラル行コード[]
+
+
+// tag::リテラルブロックコード[]
+....
+error: The requested operation returned error: 1954 Forbidden search for defensive operations manual
+absolutely fatal: operation initiation lost in the dodecahedron of doom
+would you like to die again? y/n
+....
+// end::リテラルブロックコード[]

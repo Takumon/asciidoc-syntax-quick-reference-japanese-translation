@@ -1,0 +1,20 @@
+// tag::group[]
+[horizontal]
+`none`:: 何も置換しない。
+
+`normal`:: 吹き出し以外の全てを置換する。
+
+`verbatim`:: 特定の文字と吹き出しを置換する。
+
+`specialchars`, `specialcharacters`:: `<`、 `>`、`&`を置換する。
+
+`quotes`:: クォートを置換する。
+
+`attributes`:: 属性参照を置換する。
+
+`replacements`:: テキストと文字参照を置換する。
+
+`macros`:: マクロを置換する。
+
+`post_replacements`:: 改行文字 (`{plus}`)を置換する。
+// end::group[]

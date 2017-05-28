@@ -1,0 +1,46 @@
+////
+Included in:
+
+- user-manual: Callouts
+- quick-ref
+////
+
+
+
+// tag::吹き出し付きブロック要素[]
+[source,ruby]
+----
+require 'sinatra' // <1>
+
+get '/hi' do // <2>
+  "Hello World!" // <3>
+end
+----
+<1> Library import
+<2> URL mapping
+<3> HTTP response body
+// end::吹き出し付きブロック要素[]
+
+
+
+// tag::いろいろな吹き出し付きブロック要素[]
+----
+ソースコード //<1>
+ソースコード #<2>
+ソースコード ;;<3>
+----
+<1> C言語用の行末吹き出しコメント
+<2> Ruby、Python、Perlなどの行末吹き出しコメント
+<3> Clojure用の行末吹き出しコメント
+// end::いろいろな吹き出し付きブロック要素[]
+
+
+// tag::吹き出し付きXMLブロック要素[]
+[source,xml]
+----
+<section>
+  <title>Section Title</title> <!--1-->
+</section>
+----
+<1> セクションタイトルをここで定義します。
+// end::吹き出し付きXMLブロック要素[]

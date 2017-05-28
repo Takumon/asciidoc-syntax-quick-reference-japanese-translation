@@ -1,0 +1,13 @@
+// tag::基本[]
+[caption=""]
+.章{counter2:index:0}
+|===
+|章 |説明
+
+|第{counter:index}章
+|第{index}章の説明
+
+|第{counter:index}章
+|第{index}章の説明
+|===
+// end::基本[]
