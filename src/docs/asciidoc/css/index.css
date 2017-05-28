@@ -1,0 +1,9 @@
+.exampleblock.result {
+    display: none;
+    margin-top: -1.1em;
+}
+
+.view-result {
+  float: right;
+  margin-top: -1.2em;
+}

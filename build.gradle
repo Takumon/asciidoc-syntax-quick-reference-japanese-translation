@@ -47,6 +47,17 @@ asciidoctor {
             into "$outputDir/images"
         }
 
+        copy {
+            from "$sourceDir/js"
+            into "$outputDir/html5/js"
+        }
+
+        copy {
+          from "$sourceDir/css"
+          into "$outputDir/html5/css"
+        }
+
+
         // 公開フォルダにHTML資産を格納
         copy {
             from "$outputDir/html5"
