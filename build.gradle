@@ -3,62 +3,66 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
-        classpath 'org.asciidoctor:asciidoctorj-diagram:1.3.1'
-        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11'
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'  // Asciidoctor本体
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11' // AsciidoctorでPDFを出力するためのプラグイン
+        classpath 'org.asciidoctor:asciidoctorj-diagram:1.3.1'  // AsciidoctorでPlantUMLを使用可能にするプラグイン
     }
 }
 
 plugins {
-    id 'org.asciidoctor.convert' version '1.5.3'
     id 'org.kordamp.gradle.livereload' version '0.2.1'
 }
 
-apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'org.asciidoctor.gradle.asciidoctor'
-apply plugin: 'org.kordamp.gradle.livereload'
+apply plugin: 'org.kordamp.gradle.livereload' // ライブリロード用プラグイン
 
 
 asciidoctorj {
     version = '1.5.4'
 }
+
+
 asciidoctor {
-    def source = project.sourceSets.main.java.srcDirs[0]
-    inputs.dir source
+    requires = ['asciidoctor-diagram'] // Asciidoctor生成時に必要なプラグイン
 
-    outputDir = file("build/docs/asciidoc")
-    backends = ['html5','pdf']
-    requires = ['asciidoctor-diagram']
+    outputDir = file("build/docs/asciidoc")  // 出力先ディレクトリ
+    backends = ['html5','pdf'] // 出力ファイルの形式
+    // adocファイル格納先
+    sourceDir 'src/docs'
 
+    resources {
+        into "."
+
+        from ('src/docs') {
+            include(
+                '/images/**', // 画像ファイル
+                '/js/**',  // JSファイル
+                '/css/**'  // CSSファイル
+            )
+
+        }
+    }
+
+    // ドキュメント属性
     attributes (
-        'build-gradle': file('build.gradle'),
-        'pdf-fontsdir' : "$rootDir/src/fonts", // フォント格納フォルダ
-        'pdf-stylesdir' : "$rootDir/src/theme/pdf",     // PDFテーマ格納フォルダ
-        'pdf-style' : 'custom-theme.yml',        // PDFテーマファイル名
+        'stylesdir' : "$rootDir/src/theme/html5",    // HTML用テーマ格納フォルダ
+        'stylesheet' : 'asciidoctor.css',          // HTML用テーマ（お好みで変更してください）
+        'pdf-fontsdir' : "$rootDir/src/fonts",      // PDF用フォント格納フォルダ
+        'pdf-stylesdir' : "$rootDir/src/theme/pdf", // PDF用テーマ格納フォルダ
+        'pdf-style' : 'custom-theme.yml'            // PDF用テーマ
     )
 
-    // スタイルシート用画像フォルダをビルド先にコピー
+    // 後処理
     doLast {
-        print outputDir
+        // テーマ用画像資産を出力先のにコピー
         copy {
             from "$rootDir/src/theme/html5/images"
             into "$outputDir/images"
         }
 
-        copy {
-            from "$sourceDir/js"
-            into "$outputDir/html5/js"
-        }
-
-        copy {
-          from "$sourceDir/css"
-          into "$outputDir/html5/css"
-        }
-
-
-        // 公開フォルダにHTML資産を格納
+        // 出力先の資産を公開フォルダコピーしてGithub Pagesで公開
         copy {
             from "$outputDir/html5"
             into "docs"
@@ -66,13 +70,13 @@ asciidoctor {
     }
 }
 
-
-
+// ライブリロードの設定
 liveReload {
+    // build/docs/asciidocフォルダをルートフォルダとする
     docRoot asciidoctor.outputDir.canonicalPath
 }
 
-
+// GradleWrapper生成用タスク
 task wrapper (type: Wrapper) {
     gradleVersion = '3.5'
 }

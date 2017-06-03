@@ -1,3 +1,7 @@
+[[charref-attributes]]
+= Predefined Attributes for Character Replacements
+
+[[charref-attributes-table]]
 // tag::table[]
 .文字列置換用の属性 ^[1][2][3]^
 [width="75%", cols="^4l,^3l,^3"]

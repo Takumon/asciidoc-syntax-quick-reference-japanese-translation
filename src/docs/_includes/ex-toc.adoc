@@ -1,9 +1,18 @@
+////
+Included in:
+
+- user-manual:
+- quick-ref
+////
+
+
 // tag::基本[]
 = AsciiDoc Writer's Guide
 Doc Writer <doc.writer@asciidoctor.org>
 v1.0, 2013-08-01
 :toc:
 // end::基本[]
+
 
 // tag::ポジション[]
 = AsciiDoc Writer's Guide

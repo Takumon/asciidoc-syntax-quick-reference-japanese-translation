@@ -104,35 +104,6 @@ http://getfirefox.com[Firefoxをダウンロードする]!
 // end::AsciiDocコンテンツ入り[]
 
 
-// tag::CSV[]
-[format="csv", options="header"]
-|===
-アーティスト,トラック,ジャンル
-Baauer,Harlem Shake,Hip Hop
-The Lumineers,Ho Hey,Folk Rock
-|===
-// end::CSV[]
-
-// tag::CSV簡略記法[]
-[format="csv", options="header"]
-,===
-アーティスト,トラック,ジャンル
-
-Baauer,Harlem Shake,Hip Hop
-The Lumineers,Ho Hey,Folk Rock
-,===
-// end::CSV簡略記法[]
-
-
-// tag::DSV簡略記法[]
-:===
-Artist:Track:Genre
-
-Robyn:Indestructable:Dance
-:===
-// end::DSV簡略記法[]
-
-
 // tag::整形とセル結合[]
 [cols="e,m,^,>s", width="25%"]
 |===

@@ -35,5 +35,5 @@ image::http://asciidoctor.org/images/octocat.jpg[GitHub mascot]
 
 
 // tag::インライン画像(位置指定あり)[]
-image:sunset.jpg[夕日, 150, 150, role="right"] なんて美しい夕日！
+image::sunset.jpg[夕日, 150, 150, role="right"] なんて美しい夕日！
 // end::インライン画像(位置指定あり)[]
