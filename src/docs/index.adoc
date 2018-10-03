@@ -612,7 +612,7 @@ include::{includedir}/ex-image.adoc[tags=URL指定]
 ====
 
 
-=== インラン要素
+=== インライン要素
 ----
 include::{includedir}/ex-image.adoc[tags=インライン]
 ----
@@ -1295,7 +1295,7 @@ include::{includedir}/ex-subs.adoc[tags=バックスラッシュ]
 include::{includedir}/ex-subs.adoc[tags=バックスラッシュ]
 ====
 
-=== インラン要素を変換せずに出力
+=== インライン要素を変換せずに出力
 ----
 include::{includedir}/ex-pass.adoc[tags=b-3p-macro]
 ----
