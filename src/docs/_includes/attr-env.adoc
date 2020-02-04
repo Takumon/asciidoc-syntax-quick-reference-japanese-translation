@@ -5,7 +5,7 @@
 |属性 |説明 |値の例
 
 |asciidoctor
-|プトセッサーがAsciidoctorの場合に設定する。
+|プロセッサーがAsciidoctorの場合に設定する。
 |{asciidoctor}
 
 |asciidoctor-version
