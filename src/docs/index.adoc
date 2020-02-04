@@ -583,11 +583,11 @@ include::{includedir}/ex-xref.adoc[tag=ドキュメント間の相互参照]
 
 
 == 画像
-ドキュメント属性のlink:http://asciidoctor.org/docs/user-manual/#set-the-images-directory[imagedir](デフォルトは空文字)起点にした相対パスを指定します。
-``imagedir``を指定することで、共通のパスをハードコードするのを防げます。
+ドキュメント属性のlink:http://asciidoctor.org/docs/user-manual/#set-the-images-directory[imagesdir](デフォルトは空文字)起点にした相対パスを指定します。
+``imagesdir``を指定することで、共通のパスをハードコードするのを防げます。
 
-``imagedir``は絶対パス、相対パス、URLを指定できます。
-画像の読み込みパスに、絶対パスまたはURLを指定した場合はimagedirのプレフィックスは付きません。
+``imagesdir``は絶対パス、相対パス、URLを指定できます。
+画像の読み込みパスに、絶対パスまたはURLを指定した場合はimagesdirのプレフィックスは付きません。
 
 === ブロック要素
 ----
